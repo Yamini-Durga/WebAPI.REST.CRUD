@@ -8,14 +8,20 @@ namespace WebAPI.REST.CRUD.Data
 {
     public class CommandRepo : ICommandRepo
     {
+        private readonly CommandContext _context;
+
+        public CommandRepo(CommandContext context)
+        {
+            _context = context;
+        }
         public IEnumerable<Command> GetAllCommands()
         {
-            throw new NotImplementedException();
+            return _context.Commands.ToList();
         }
 
         public Command GetCommandById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Commands.FirstOrDefault(c => c.Id == id);
         }
     }
 }
