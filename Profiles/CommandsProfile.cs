@@ -13,6 +13,8 @@ namespace WebAPI.REST.CRUD.Profiles
         public CommandsProfile()
         {
             CreateMap<Command, CommandDto>();
+            CreateMap<CommandCreateDto, Command>();
+            CreateMap<Command, CommandCreateDto>();
         }
     }
 }
