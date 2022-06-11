@@ -8,7 +8,10 @@ namespace WebAPI.REST.CRUD.Data
 {
     public interface ICommandRepo
     {
+        bool SaveChanges();
         IEnumerable<Command> GetAllCommands();
         Command GetCommandById(int id);
+        void CreateCommand(Command cmd);
+        void DeleteCommand(Command cmd);
     }
 }
